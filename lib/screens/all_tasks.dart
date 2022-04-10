@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:todolist/data/tasks.dart' as data;
-import 'package:todolist/components/tasks/task_preview.dart';
 import 'package:todolist/components/tasks/task_master.dart';
 import 'package:todolist/components/tasks/task_details.dart';
 
