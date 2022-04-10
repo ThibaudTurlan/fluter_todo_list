@@ -2,14 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:todolist/models/task.dart';
 
 class TaskDetails extends StatelessWidget {
-  const TaskDetails({Key? key, required this.task}) : super(key: key);
+  const TaskDetails(
+      {Key? key,
+      required this.task,
+      required this.hideDetails,
+      required this.confirmDelete})
+      : super(key: key);
 
   final Task? task;
+  final Function hideDetails;
+  final Function confirmDelete;
 
   void close() {
+    hideDetails();
   }
 
   void delete(task) {
+    confirmDelete(task);
   }
 
   @override
@@ -22,7 +31,7 @@ class TaskDetails extends StatelessWidget {
     Widget getIconAccordingToCompleted() {
       return (task!.completed)
           ? const Icon(Icons.check)
-          : const Icon(Icons.access_time);
+          : const Icon(Icons.timelapse);
     }
 
     return Container(
